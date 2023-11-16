@@ -17,9 +17,8 @@ const styles = StyleSheet.create({
   input_login: {
     width: "90%",
     height: 55,
-    borderColor: "#000",
-    backgroundColor: "#fff",
-    borderWidth: 2,
+    backgroundColor: "rgba(255, 255, 255, 0.9)",
+    borderWidth: 0.5,
     borderRadius: 5,
     fontSize: 22,
     paddingLeft: 10,
@@ -28,7 +27,7 @@ const styles = StyleSheet.create({
   name_input: {
     fontSize: 16,
     color: "#fff",
-    fontWeight: "400",
+    fontWeight: "700",
     alignSelf: "flex-start",
     marginLeft: "5.5%",
     marginBottom: 5,
