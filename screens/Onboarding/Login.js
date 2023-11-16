@@ -26,6 +26,8 @@ export default function Login({ navigation }) {
       alert("Usuario o contraseña incorrectos");
       return;
     }else{
+      // Almacena el usuario logeado en AsyncStorage
+      await AsyncStorage.setItem("logged_user", JSON.stringify(user));
       navigation.navigate("StackMain");
     }
   };
