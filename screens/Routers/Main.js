@@ -5,7 +5,7 @@ import disableBackButton from "../../util/disableBackButton";
 //Routes
 import Home from "../MainScreen/Home";
 import Search from "../MainScreen/Search";
-import Camera from "../MainScreen/Camera";
+import Camera from "../MainScreen/CameraIA";
 import Profile from "../MainScreen/Profile";
 //Icons
 import House from "../../assets/svgs/House";
