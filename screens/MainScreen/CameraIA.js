@@ -45,20 +45,52 @@ export default function CameraIA({ navigation }) {
       });
       console.log(photo.uri);
       setSelectedImage(photo.uri);
-      uploadImage(photo);
+      uploadPhoto(photo.uri);
     }
   };
-
-  const uploadImage = async (result) => {
+  const uploadPhoto = async (photo) => {
     const formData = new FormData();
     formData.append("file", {
-      uri: result.uri,
-      type: "image/jpeg",
-      name: "image.jpeg",
+      uri: photo.uri,
+      type: "image/jpg",
+      name: "image.jpg",
     });
 
     const apiUrl = "https://fastapi-production-f32f.up.railway.app/predict";
 
+    try {
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const resultJson = await response.json();
+      console.log(resultJson);
+      setError(false)
+    } catch (error) {
+      console.error("Error during fetch:", error);
+      setError(true);
+    }
+  };
+  const uploadImage = async (result) => {
+    const formData = new FormData();
+    console.log(result)
+    formData.append("file", {
+      uri: result.assets[0].uri,
+      type: "image/jpeg",
+      name: "image.jpeg",
+    });
+
+    const apiUrl = "http://148.220.213.234:8000/predict";
+
+    // debugger
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
