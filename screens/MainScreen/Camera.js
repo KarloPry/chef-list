@@ -3,13 +3,12 @@ import { View, Button, Image, Platform } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import NavBar from "../../components/NavBar";
 
-export default function Camera({ navigation}) {
+export default function Camera({ navigation }) {
   const [selectedImage, setSelectedImage] = useState(null);
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
-
   }, []);
 
   const pickImage = async () => {
@@ -20,11 +19,9 @@ export default function Camera({ navigation}) {
         aspect: [4, 3],
         quality: 1,
       });
-
-      if (!result.cancelled) {
-        setSelectedImage(result.uri);
-        uploadImage(result);
-      }
+      console.log(result.assets[0].uri)
+      setSelectedImage(result.assets[0].uri);
+      uploadImage(result);
     } catch (error) {
       console.error("Error picking an image:", error);
     }
@@ -33,37 +30,37 @@ export default function Camera({ navigation}) {
   const uploadImage = async (result) => {
     const formData = new FormData();
     formData.append("file", {
-      uri: result.uri,
-      name: "image.png",
-      type: "image/png",
+      uri: result.assets[0].uri,
+      type: "image/jpeg",
+      name: "image.jpeg",
     });
-
-    const apiUrl = "http://localhost:8000/predict";
-
+  
+    const apiUrl = "https://fastapi-production-f32f.up.railway.app/predict";
+  
     try {
       const response = await fetch(apiUrl, {
-        method: 'POST',
+        method: "POST",
         body: formData,
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
-    
+  
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
-    
+  
       const resultJson = await response.json();
       console.log(resultJson);
     } catch (error) {
-      console.error('Error during fetch:', error);
+      console.error("Error during fetch:", error);
     }
-    
   };
+  
 
   return (
     <>
-    <NavBar/>
+      <NavBar />
       <Button title="Pick an image from camera roll" onPress={pickImage} />
       {selectedImage && (
         <Image
