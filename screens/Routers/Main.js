@@ -48,6 +48,7 @@ export default function Main({ navigation }) {
           options={{
             tabBarShowLabel: false,
             tabBarIcon: () => <CameraIcon />,
+            tabBarStyle: styles.lowerBarCamera,
           }}
         />
         <Tab.Screen
@@ -70,5 +71,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     flexShrink: 0,
     backgroundColor: "#537D3D",
+  },
+  lowerBarCamera: {
+    display: "inline-flex",
+    height: 60,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    flexShrink: 0,
+    backgroundColor: "#000000",
   },
 });

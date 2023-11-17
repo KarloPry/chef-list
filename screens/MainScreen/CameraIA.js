@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { View, Text, Image, Platform } from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import * as ImagePicker from "expo-image-picker";
 import { Camera } from "expo-camera";
 import NavBar from "../../components/NavBar";
@@ -8,9 +8,17 @@ import CustomButton from "../../components/CustomButton";
 export default function CameraIA({ navigation }) {
   const [selectedImage, setSelectedImage] = useState(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
+  const [photoTaken, setPhotoTaken] = useState(false);
   const [error, setError] = useState();
   const cameraRef = useRef(null);
 
+  function handleIAResponse(prediction) {
+    let recipe = null;
+    switch (response) {
+      case "pancakes":
+    }
+    recipe !== null ? navigation.navigate("Details", recipe) : setError(true);
+  }
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
@@ -20,22 +28,6 @@ export default function CameraIA({ navigation }) {
       headerShown: false,
     });
   }, []);
-
-  const pickImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        aspect: [4, 3],
-        quality: 1,
-      });
-      console.log(result.assets[0].uri);
-      setSelectedImage(result.assets[0].uri);
-      uploadImage(result);
-    } catch (error) {
-      console.error("Error picking an image:", error);
-    }
-  };
 
   const takePhoto = async () => {
     if (cameraRef.current) {
@@ -49,48 +41,16 @@ export default function CameraIA({ navigation }) {
     }
   };
   const uploadPhoto = async (photo) => {
+    console.log(photo);
     const formData = new FormData();
     formData.append("file", {
-      uri: photo.uri,
+      uri: photo,
       type: "image/jpg",
       name: "image.jpg",
     });
 
-    const apiUrl = "https://fastapi-production-f32f.up.railway.app/predict";
-
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        body: formData,
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const resultJson = await response.json();
-      console.log(resultJson);
-      setError(false)
-    } catch (error) {
-      console.error("Error during fetch:", error);
-      setError(true);
-    }
-  };
-  const uploadImage = async (result) => {
-    const formData = new FormData();
-    console.log(result)
-    formData.append("file", {
-      uri: result.assets[0].uri,
-      type: "image/jpeg",
-      name: "image.jpeg",
-    });
-
     const apiUrl = "http://148.220.213.234:8000/predict";
 
-    // debugger
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -106,7 +66,7 @@ export default function CameraIA({ navigation }) {
 
       const resultJson = await response.json();
       console.log(resultJson);
-      setError(false)
+      setError(false);
     } catch (error) {
       console.error("Error during fetch:", error);
       setError(true);
@@ -123,18 +83,13 @@ export default function CameraIA({ navigation }) {
           type={Camera.Constants.Type.back}
         />
       )}
-      <CustomButton
-        text="Elige una imagen"
-        action={pickImage}
-        color={"orange"}
+      <Image
+        source={require("../../assets/images/camera/PhotoFrame.png")}
+        style={styles.cameraFrame}
       />
-      <CustomButton text="Toma una foto" action={takePhoto} color={"orange"} />
-      {selectedImage && (
-        <Image
-          source={{ uri: selectedImage }}
-          style={{ width: 200, height: 200 }}
-        />
-      )}
+      <TouchableOpacity style={styles.cameraButton} onPress={takePhoto}>
+        <Image source={require("../../assets/images/camera/PhotoButton.png")} />
+      </TouchableOpacity>
       {error && (
         <View>
           <Text>A ocurrido un error con la IA.</Text>
@@ -143,3 +98,18 @@ export default function CameraIA({ navigation }) {
     </>
   );
 }
+const styles = StyleSheet.create({
+  cameraFrame: {
+    width: 300,
+    height: 300,
+    position: "absolute",
+    alignSelf: "center",
+    top: "35%",
+  },
+  cameraButton: {
+    position: "absolute",
+    alignSelf: "center",
+    top: "75%",
+    padding: 5,
+  },
+});
