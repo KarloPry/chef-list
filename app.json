@@ -11,6 +11,14 @@
       "resizeMode": "contain",
       "backgroundColor": "#6EA850"
     },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "¿Nos permites usar tu cámara?"
+        }
+      ]
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],

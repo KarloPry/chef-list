@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, View, Text, StyleSheet, Image } from "react-native";
 import GrayVerticalLine from "../../assets/svgs/GrayVerticalLine";
 import { LinearGradient } from "expo-linear-gradient";
@@ -10,6 +10,26 @@ export default function Details({ route, navigation }) {
   const recipe = route.params.recipe;
   let savedIngredients = [];
   const [saved, setSaved] = useState(false);
+
+  async function getSavedRecipes() {
+    const recipes = await AsyncStorage.getItem("Recetas");
+    return recipes;
+  }
+  useEffect(() => {
+    const loadRecipes = async () => {
+      const recipes = await getSavedRecipes();
+      if (recipes) {
+        const recipesArray = JSON.parse(recipes);
+        const recipeFound = recipesArray.find(
+          (recipeSaved) => recipeSaved.id === recipe.id
+        );
+        if (recipeFound) {
+          setSaved(true);
+        }
+      }
+    };
+    loadRecipes();
+  }, []);
   function handleCheckIngredient(ingredient) {
     if (savedIngredients.includes(ingredient)) {
       savedIngredients = savedIngredients.filter(
@@ -21,6 +41,9 @@ export default function Details({ route, navigation }) {
     console.log(savedIngredients);
   }
   async function handleSaveIngredients() {
+    if (savedIngredients.length === 0) {
+      return;
+    }
     // Add name of the recipe and the ingredients
     const recipeToSave = {
       id: recipe.id,
@@ -139,7 +162,6 @@ export default function Details({ route, navigation }) {
           )}
         </View>
       </LinearGradient>
-      {/* Gradient color #FEFFCF */}
       <LinearGradient
         colors={["#FEFFCF", "transparent"]}
         locations={[0.8, 1]}

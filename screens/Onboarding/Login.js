@@ -1,9 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet, View, ImageBackground, Image, Text } from "react-native";
 import LoginInput from "../../components/LoginInput";
 import CustomButton from "../../components/CustomButton";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 export default function Login({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
@@ -12,8 +15,19 @@ export default function Login({ navigation }) {
   const handleSignInPress = () => {
     navigation.goBack();
   }
-  const handleSubmit = () => {
-    navigation.navigate("StackMain");
+  async function handleSubmit() {
+    const DATA = await AsyncStorage.getItem("login_data");
+    const login_data_parsed = JSON.parse(DATA);
+    console.log(login_data_parsed)
+    console.log(email, password)
+    const user = login_data_parsed.find((user) => user.user_email === email && user.user_password === password);
+    console.log(user)
+    if (!user) {
+      alert("Usuario o contraseña incorrectos");
+      return;
+    }else{
+      navigation.navigate("StackMain");
+    }
   };
   return (
     <ImageBackground
@@ -33,11 +47,13 @@ export default function Login({ navigation }) {
             name="Correo Electrónico"
             placeholder="ejemplo@email.com"
             type="text"
+            onChangeText={(text) => setEmail(text)}
           />
           <LoginInput
             name="Contraseña"
             placeholder="*********"
             type="password"
+            onChangeText={(text) => setPassword(text)}
           />
           <View
             style={{

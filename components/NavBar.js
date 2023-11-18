@@ -1,8 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, TouchableOpacity, View, Image } from "react-native";
 import List from "../assets/svgs/List";
+import { useNavigation } from "@react-navigation/native";
 
 const NavBar = () => {
+  const navigation = useNavigation();
+  function handleListPress() {
+    console.log("List pressed");
+    navigation.navigate("List");
+  }
   return (
     <>
       <View style={styles.navbar}>
@@ -11,7 +17,9 @@ const NavBar = () => {
           source={require("../assets/images/icon.png")}
         />
         <View style={styles.list}>
-          <List />
+          <TouchableOpacity onPress={handleListPress}>
+            <List />
+          </TouchableOpacity>
         </View>
       </View>
     </>

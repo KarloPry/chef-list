@@ -1,0 +1,32 @@
+[
+    {
+        "user_id": 1,
+        "user_password": "admin",
+        "user_email": "admin@google.com",
+        "user_name": "admin"
+    },
+    {
+        "user_id": 2,
+        "user_password": "kang123",
+        "user_email": "karlopaz@gmail.com",
+        "user_name": "Karlo Paz"
+    },
+    {
+        "user_id": 3,
+        "user_password": "estrella222",
+        "user_email": "frida@gmail.com",
+        "user_name": "Frida Olivera"
+    },
+    {
+        "user_id": 4,
+        "user_password": "kang123",
+        "user_email": "andrestorres@hotmail.com",
+        "user_name": "Andres Torres"
+    },
+    {
+        "user_id": 5,
+        "user_password": "contrasena",
+        "user_email": "jesusalberto@gmail.com",
+        "user_name": "Jesus Alberto"
+    }
+]

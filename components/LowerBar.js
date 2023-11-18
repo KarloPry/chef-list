@@ -1,9 +1,6 @@
 import React from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity } from "react-native";
 import House from "../assets/svgs/House";
-import Lupa from "../assets/svgs/Lupa";
-import CameraIcon from "../assets/svgs/CameraIcon";
-import ProfileIcon from "../assets/svgs/ProfileIcon";
 export default function LowerBar({ navigation }) {
   function handleSearchPress() {
     console.log("Search");

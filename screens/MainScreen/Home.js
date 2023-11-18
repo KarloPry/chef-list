@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
       paddingTop: 40,
+      marginBottom: 20,
     },
   });
   

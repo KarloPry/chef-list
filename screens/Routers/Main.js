@@ -5,7 +5,7 @@ import disableBackButton from "../../util/disableBackButton";
 //Routes
 import Home from "../MainScreen/Home";
 import Search from "../MainScreen/Search";
-import Camera from "../MainScreen/Camera";
+import Camera from "../MainScreen/CameraIA";
 import Profile from "../MainScreen/Profile";
 //Icons
 import House from "../../assets/svgs/House";
@@ -48,6 +48,7 @@ export default function Main({ navigation }) {
           options={{
             tabBarShowLabel: false,
             tabBarIcon: () => <CameraIcon />,
+            tabBarStyle: styles.lowerBarCamera,
           }}
         />
         <Tab.Screen
@@ -64,11 +65,20 @@ export default function Main({ navigation }) {
 const styles = StyleSheet.create({
   lowerbar: {
     display: "inline-flex",
-    height: 70,
+    height: 60,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
     flexShrink: 0,
     backgroundColor: "#537D3D",
+  },
+  lowerBarCamera: {
+    display: "inline-flex",
+    height: 60,
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    flexShrink: 0,
+    backgroundColor: "#000000",
   },
 });
