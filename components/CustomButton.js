@@ -5,7 +5,7 @@ export default function CustomButton({ text, color, action }) {
 
   const styles = StyleSheet.create({
     button_login: {
-      paddingVertical: 4,
+      paddingVertical: 8,
       paddingHorizontal: 15,
       justifyContent: "center",
       alignItems: "center",
@@ -16,7 +16,7 @@ export default function CustomButton({ text, color, action }) {
   return (
     <View>
     <TouchableOpacity style={styles.button_login} onPress={action}>
-      <Text style={{ fontSize: 13, color: "white" }}>{text}</Text>
+      <Text style={{ fontSize: 18, color: "white" }}>{text}</Text>
     </TouchableOpacity>
     </View>
   );

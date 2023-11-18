@@ -15,17 +15,17 @@ export default function LoginInput({ name, placeholder, type }) {
 const styles = StyleSheet.create({
   input_login: {
     width: "90%",
-    height: 55,
+    height: 45,
     borderColor: "#000",
     backgroundColor: "#fff",
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 5,
-    fontSize: 22,
+    fontSize: 20,
     paddingLeft: 10,
     marginBottom: 20,
   },
   name_input: {
-    fontSize: 16,
+    fontSize: 18,
     color: "#fff",
     fontWeight: "400",
     alignSelf: "flex-start",

@@ -49,7 +49,7 @@ export default function Login({ navigation }) {
           >
             <CustomButton text="Iniciar Sesión" color="#F28B0C" action={handleSubmit}/>
           </View>
-          <Text style={{ color: "rgba(166, 166, 166, 1)", fontSize: 14, fontWeight:"300",paddingTop:20 }}>
+          <Text style={{ color: "rgba(176, 176, 176,1)", fontSize: 16, fontWeight:"300",paddingTop:20 }}>
           ¿No tienes una cuenta?{" "}
             <Text style={{ textDecorationLine: "underline", fontWeight:"600"}} onPress={handleSignInPress}>
             Regístrate
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   welcome_text: {
-    fontSize: 24,
+    fontSize: 26,
     color: "#FFF",
     fontWeight: "600",
     marginBottom: 20,
