@@ -5,8 +5,10 @@ import { LinearGradient } from "expo-linear-gradient";
 import CustomButton from "../../components/CustomButton";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import NavBar from "../../components/NavBar";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Details({ route, navigation }) {
+export default function Details({ route }) {
   const recipe = route.params.recipe;
   let savedIngredients = [];
   const [saved, setSaved] = useState(false);
@@ -15,6 +17,7 @@ export default function Details({ route, navigation }) {
     const recipes = await AsyncStorage.getItem("Recetas");
     return recipes;
   }
+  const navigation = useNavigation()
   useEffect(() => {
     const loadRecipes = async () => {
       const recipes = await getSavedRecipes();
@@ -28,6 +31,9 @@ export default function Details({ route, navigation }) {
         }
       }
     };
+    navigation.setOptions({
+      headerShown: false,
+    });
     loadRecipes();
   }, []);
   function handleCheckIngredient(ingredient) {
@@ -70,6 +76,8 @@ export default function Details({ route, navigation }) {
   }
 
   return (
+    <>
+    <NavBar />
     <ScrollView contentContainerStyle={styles.detailsContainer}>
       <View style={styles.foodName}>
         <Text style={styles.foodNameText}>{recipe.name}</Text>
@@ -194,6 +202,7 @@ export default function Details({ route, navigation }) {
         </Text>
       </View>
     </ScrollView>
+    </>
   );
 }
 const styles = StyleSheet.create({
