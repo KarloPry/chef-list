@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, ScrollView, StyleSheet } from "react-native";
 import FoodCard from "../../components/FoodCard";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SearchResults({ route }) {
-  let name = route.params.name;
+ const navigation = useNavigation();
+ let name = route.params.name;
   name == "Botanas" ? (name = "Botana") : {};
   name == "Bebidas" ? (name = "Bebida") : {};
   name == "Entradas" ? (name = "Entrada") : {};
   name == "Plato Fuerte" ? (name = "Plato fuerte") : {};
   let recipes = require("../../data/comida.json");
+  useEffect(() => {
+    navigation.setOptions({
+      title: name
+    });
+  }, []);
+  
   //Filter data based on type of food
   console.log(name);
   recipes = recipes.filter((recipe) => recipe.category == name);
