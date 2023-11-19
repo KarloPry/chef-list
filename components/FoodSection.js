@@ -4,7 +4,7 @@ import FoodCard from "./FoodCard";
 
 //Title es el titulo de la sección general
 //Data son los datos recabados de un JSON
-const FoodSection = ({ recipes, title, num }) => {
+const FoodSection = ({ recipes, title, par }) => {
   return (
     <View>
       <Text style={styles.titleSection}>{title}</Text>
@@ -13,7 +13,8 @@ const FoodSection = ({ recipes, title, num }) => {
         contentContainerStyle={styles.scrollContainer}
       >
         {recipes.map((recipe) => {
-          if (recipe.id % num == 0){
+          
+          if (recipe.id % 2 == 0 && par == true){
             return (
               <View key={recipe.id} style={styles.itemScroll}>
                 <FoodCard
@@ -21,6 +22,16 @@ const FoodSection = ({ recipes, title, num }) => {
                 />
               </View>
             );
+          }else{
+            if (recipe.id % 2 != 0 && par == false){
+              return (
+                <View key={recipe.id} style={styles.itemScroll}>
+                  <FoodCard
+                    recipe={recipe}
+                  />
+                </View>
+              );
+            }
           }
         })}
       </ScrollView>
