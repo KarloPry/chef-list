@@ -1,6 +1,5 @@
 import * as React from "react";
 import { useEffect } from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Details from "../MainScreen/Details";
 import List from "../MainScreen/List";
