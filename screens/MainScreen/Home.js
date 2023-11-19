@@ -34,7 +34,7 @@ export default function Home({navigation}) {
 const styles = StyleSheet.create({
     mainContainer: {
       flex: 1,
-      paddingTop: 40,
+      paddingTop: 20,
       marginBottom: 20,
     },
   });

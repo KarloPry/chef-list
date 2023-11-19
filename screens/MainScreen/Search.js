@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
   searchMainText: {
     fontSize: 26,
     fontWeight: "bold",
-    marginBottom: 20,
+    marginBottom: 15,
   }
 });

@@ -28,7 +28,7 @@ const NavBar = () => {
 
 const styles = StyleSheet.create({
   navbar: {
-    paddingTop: 30,
+    paddingTop: 40,
     backgroundColor: "#6EA850",
     height: 100,
     width: "100%",
@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
     height: 54,
   },
   list: {
-    padding: 14,
-    justifyContent: "center",
-    alignItems: "center",
+    padding: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: "#fff",
     borderRadius: 18,
   },

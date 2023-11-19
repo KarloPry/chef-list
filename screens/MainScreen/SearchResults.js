@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     padding: 20,
     marginLeft: 20,
     marginVertical: 10,
+    paddingBottom: 40,
     gap: 20,
   },
   itemScroll: {

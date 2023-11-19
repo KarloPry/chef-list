@@ -123,11 +123,11 @@ export default function Details({ route, navigation }) {
         locations={[0.8, 1]}
         style={styles.utensils}
       >
-        <Text style={{ fontSize: 20, fontWeight: "600", paddingVertical: 5 }}>
+        <Text style={styles.titleList}>
           Utensilios
         </Text>
         {recipe.utensils.map((utensil) => (
-          <Text key={utensil.id}>{utensil.name}</Text>
+          <Text style={styles.textList} key={utensil.id}>{utensil.name}</Text>
         ))}
       </LinearGradient>
       <LinearGradient
@@ -135,10 +135,10 @@ export default function Details({ route, navigation }) {
         locations={[0.8, 1]}
         style={styles.utensils}
       >
-        <Text style={{ fontSize: 20, fontWeight: "600", paddingVertical: 5 }}>
+        <Text style={styles.titleList}>
           Ingredientes
         </Text>
-        <View style={{ gap: 5 }}>
+        <View style={styles.textList}>
           {recipe.ingredients.map((ingredient) => (
             <BouncyCheckbox
               key={ingredient.id}
@@ -148,10 +148,10 @@ export default function Details({ route, navigation }) {
             />
           ))}
         </View>
-        <View style={{ display: "flex", marginTop: 10, marginLeft: 120 }}>
+        <View style={styles.bottomList}>
           {saved ? (
             <View style={{ alignItems: "center" }}>
-              <Text style={{ fontSize: 18 }}>Guardado ✅</Text>
+              <Text style={{ fontSize: 16 }}>Guardado ✅</Text>
             </View>
           ) : (
             <CustomButton
@@ -165,13 +165,13 @@ export default function Details({ route, navigation }) {
       <LinearGradient
         colors={["#FEFFCF", "transparent"]}
         locations={[0.8, 1]}
-        style={styles.utensils}
+        style={styles.pasos}
       >
-        <Text style={{ fontSize: 20, fontWeight: "600", paddingVertical: 5 }}>
+        <Text style={styles.titleList}>
           Pasos
         </Text>
         {recipe.steps.map((step) => (
-          <Text key={step.id}>{step.description}</Text>
+          <Text style={styles.textList} key={step.id}>{step.description}</Text>
         ))}
       </LinearGradient>
       <View style={styles.kcal}>
@@ -207,11 +207,14 @@ const styles = StyleSheet.create({
   },
   foodName: {
     borderRadius: 60,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent:'center',
     backgroundColor: "#FFB000",
     padding: 20,
-    alignSelf: "center",
   },
   foodNameText: {
+    textAlign:'center',
     color: "white",
     fontSize: 20,
     fontWeight: "600",
@@ -237,12 +240,28 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     paddingHorizontal: 20,
+    paddingRight:45,
     paddingVertical: 20,
     paddingBottom: 45,
     borderRadius: 15,
+    marginRight:10,
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 0,
-    width: 290,
+    width: 350,
+  },
+  pasos: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    paddingHorizontal: 20,
+    paddingVertical: 20,
+    paddingBottom: 45,
+    borderRadius: 15,
+    marginRight:10,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    width: 350,
+    gap:15,
   },
   kcal: {
     display: "flex",
@@ -254,4 +273,18 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     gap: 24,
   },
+  titleList:{
+    fontSize: 20, 
+    fontWeight: "600", 
+    paddingVertical: 5 
+  },
+  textList:{
+    fontSize:16,
+    gap: 10,
+  },
+  bottomList:{ 
+    display: "flex", 
+    marginTop: 20, 
+    alignItems:'flex-end',
+  }
 });

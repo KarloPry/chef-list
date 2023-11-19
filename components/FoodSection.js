@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderColor: "black",
     borderWidth: 1,
-    padding: 20,
+    padding: 5,
     marginLeft: 20,
     marginVertical: 10,
   },
@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   titleSection: {
-    textAlign: "center",
+    textAlign: 'left',
+    marginLeft: 25,
     fontSize: 26,
     fontWeight: "bold",
   },
