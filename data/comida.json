@@ -81,15 +81,15 @@
         "steps": [
             {
                 "id": 1,
-                "description": "Mezcla la leche evaporada con el huevo, 2 cucharadas de mantequilla fundida, la esencia de vainilla y la harina para hot cakes."
+                "description": "1. Mezcla la leche evaporada con el huevo, 2 cucharadas de mantequilla fundida, la esencia de vainilla y la harina para hot cakes."
             },
             {
                 "id": 2,
-                "description": "Calienta una sartén, agrega un poco de mantequilla y con ayuda de un cucharón vierte un poco de la mezcla para formar los hot cakes; cocina por ambos lados y repite el procedimiento con el resto de la preparación."
+                "description": "2. Calienta una sartén, agrega un poco de mantequilla y con ayuda de un cucharón vierte un poco de la mezcla para formar los hot cakes; cocina por ambos lados y repite el procedimiento con el resto de la preparación."
             },
             {
                 "id": 3,
-                "description": "Sirve los hot cakes, decora con moras azules, fresas, las hojas de menta y con un poco de leche condensada. Ofrece."
+                "description": "3. Sirve los hot cakes, decora con moras azules, fresas, las hojas de menta y con un poco de leche condensada. Ofrece."
             }
         ],
         "kcal": 138
@@ -156,15 +156,15 @@
         "steps": [
             {
                 "id": 11,
-                "description": "Mezcla la leche evaporada con el huevo y la vainilla hasta integrar por completo."
+                "description": "1. Mezcla la leche evaporada con el huevo y la vainilla hasta integrar por completo."
             },
             {
                 "id": 12,
-                "description": "En una sartén caliente, funde un poco de mantequilla, humedece cada rebanada de pan con la mezcla de leche evaporada y cocina por ambos lados hasta que dore ligeramente."
+                "description": "2. En una sartén caliente, funde un poco de mantequilla, humedece cada rebanada de pan con la mezcla de leche evaporada y cocina por ambos lados hasta que dore ligeramente."
             },
             {
                 "id": 13,
-                "description": "Corta cada rebanada por la mitad, sirve y decora con un poco de leche condensada, frutos rojos y canela. Ofrece."
+                "description": "3. Corta cada rebanada por la mitad, sirve y decora con un poco de leche condensada, frutos rojos y canela. Ofrece."
             }
         ],
         "kcal": 288
@@ -243,15 +243,15 @@
         "steps": [
             {
                 "id": 21,
-                "description": "Para la salsa, licúa los tomates con la cebolla, los ajos, los chiles, el agua, el cilantro y el consomé de pollo. Calienta el aceite, vierte lo que licuaste y cocina hasta que hierva moviendo ocasionalmente."
+                "description": "1. Para la salsa, licúa los tomates con la cebolla, los ajos, los chiles, el agua, el cilantro y el consomé de pollo. Calienta el aceite, vierte lo que licuaste y cocina hasta que hierva moviendo ocasionalmente."
             },
             {
                 "id": 22,
-                "description": "Agrega los totopos a la salsa y mezcla suavemente para que absorban un poco de salsa."
+                "description": "2. Agrega los totopos a la salsa y mezcla suavemente para que absorban un poco de salsa."
             },
             {
                 "id": 23,
-                "description": "Sirve los chilaquiles y baña con un poco más de salsa. Añade el pollo, la media crema y el queso. Ofrece."
+                "description": "3. Sirve los chilaquiles y baña con un poco más de salsa. Añade el pollo, la media crema y el queso. Ofrece."
             }
         ],
         "kcal": 771
@@ -334,15 +334,15 @@
         "steps": [
             {
                 "id": 41,
-                "description": "Licúa los jitomates, el chile, la cebolla, el ajo, el caldo de pollo y el agua. Calienta 1/2 cucharada de aceite y vierte lo que licuaste, cocina hasta que espese ligeramente moviendo ocasionalmente."
+                "description": "1. Licúa los jitomates, el chile, la cebolla, el ajo, el caldo de pollo y el agua. Calienta 1/2 cucharada de aceite y vierte lo que licuaste, cocina hasta que espese ligeramente moviendo ocasionalmente."
             },
             {
                 "id": 42,
-                "description": "Coloca un poco de salsa sobre un plato, sobre ella un par de tortillas, agrega un par de huevos y baña con un poco más de salsa."
+                "description": "2. Coloca un poco de salsa sobre un plato, sobre ella un par de tortillas, agrega un par de huevos y baña con un poco más de salsa."
             },
             {
                 "id": 43,
-                "description": "Acompaña con rebanadas de queso y decora con el cilantro; ofrece."
+                "description": "3. Acompaña con rebanadas de queso y decora con el cilantro; ofrece."
             }
         ],
         "kcal": 224
@@ -457,15 +457,15 @@
         "steps": [
             {
                 "id": 51,
-                "description": "Calienta la leche evaporada con el consomé de pollo y la mantequilla, cuando suelte el hervor añade las hojuelas de papa, mezcla hasta integrar y cocina hasta que espese; deja enfriar."
+                "description": "1. Calienta la leche evaporada con el consomé de pollo y la mantequilla, cuando suelte el hervor añade las hojuelas de papa, mezcla hasta integrar y cocina hasta que espese; deja enfriar."
             },
             {
                 "id": 52,
-                "description": "Añade la avena, el atún, la cebolla, el perejil, el huevo y mueve hasta integrar por completo; forma las tortitas con tus manos. Calienta el aceite y fríelas por ambos lados; colócalas sobre papel absorbente para retirar el exceso de grasa."
+                "description": "2. Añade la avena, el atún, la cebolla, el perejil, el huevo y mueve hasta integrar por completo; forma las tortitas con tus manos. Calienta el aceite y fríelas por ambos lados; colócalas sobre papel absorbente para retirar el exceso de grasa."
             },
             {
                 "id": 53,
-                "description": "En una ensaladera, mezcla los berros con las rebanadas de jitomate, el pepino, los aros de cebolla morada, el jugo de limón, el aceite de oliva, la pimienta y la sal. Ofrece las tortitas con la ensalada."
+                "description": "3. En una ensaladera, mezcla los berros con las rebanadas de jitomate, el pepino, los aros de cebolla morada, el jugo de limón, el aceite de oliva, la pimienta y la sal. Ofrece las tortitas con la ensalada."
             }
         ],
         "kcal": 644
@@ -540,15 +540,15 @@
         "steps": [
             {
                 "id": 71,
-                "description": "Mezcla ¼ taza de Jugo MAGGI® BBQ, la cátsup y el pollo, cubre con plástico adherente y marina en refrigeración por 15 minutos."
+                "description": "1. Mezcla ¼ taza de Jugo MAGGI® BBQ, la cátsup y el pollo, cubre con plástico adherente y marina en refrigeración por 15 minutos."
             },
             {
                 "id": 72,
-                "description": "Calienta el aceite y fríe la preparación anterior hasta que el pollo dore ligeramente. Añade las tiras de pimiento, las calabazas, la sal con ajo y cocina por 3 minutos."
+                "description": "2. Calienta el aceite y fríe la preparación anterior hasta que el pollo dore ligeramente. Añade las tiras de pimiento, las calabazas, la sal con ajo y cocina por 3 minutos."
             },
             {
                 "id": 73,
-                "description": "Para formar los wraps, rellena las tortillas con la lechuga, un poco de la preparación anterior y cierra formando un cono; ofrece con el Jugo MAGGI® BBQ restante."
+                "description": "3. Para formar los wraps, rellena las tortillas con la lechuga, un poco de la preparación anterior y cierra formando un cono; ofrece con el Jugo MAGGI® BBQ restante."
             }
         ],
         "kcal": 357
@@ -619,15 +619,15 @@
         "steps": [
             {
                 "id": 81,
-                "description": "Mezcla la media crema, la mayonesa, el chile chipotle y la sal con cebolla, agrega los chícharos, las zanahorias, las papas y el jamón hasta integrar por completo"
+                "description": "1. Mezcla la media crema, la mayonesa, el chile chipotle y la sal con cebolla, agrega los chícharos, las zanahorias, las papas y el jamón hasta integrar por completo"
             },
             {
                 "id": 82,
-                "description": "Cubre con plástico adherente y refrigera por 20 minutes."
+                "description": "2. Cubre con plástico adherente y refrigera por 20 minutes."
             },
             {
                 "id": 83,
-                "description": "Rellena los cuernitos con la ensalada y las rebanadas de aguacate. Ofrece."
+                "description": "3. Rellena los cuernitos con la ensalada y las rebanadas de aguacate. Ofrece."
             }
         ],
         "kcal": 397
@@ -702,15 +702,15 @@
         "steps": [
             {
                 "id": 91,
-                "description": "En una sartén, fríe el tocino con la cebolla hasta que estén ligeramente dorados. Añade el brócoli, la zanahoria, el Jugo MAGGI®, la salsa tipo inglesa y cocina por 2 minutos. Coloca en un tazón y deja enfriar."
+                "description": "1. En una sartén, fríe el tocino con la cebolla hasta que estén ligeramente dorados. Añade el brócoli, la zanahoria, el Jugo MAGGI®, la salsa tipo inglesa y cocina por 2 minutos. Coloca en un tazón y deja enfriar."
             },
             {
                 "id": 92,
-                "description": "Mezcla los huevos con la preparación anterior. Con ayuda de un cortador para galletas circular, retira el centro de cada rebanada de pan. Calienta un poco de mantequilla, coloca 1 rebanada de pan sin el centro, añade un poco de la mezcla de vegetales con huevo al centro del pan y cocina a fuego medio por ambos lados. Repite con el resto de los ingredientes."
+                "description": "2. Mezcla los huevos con la preparación anterior. Con ayuda de un cortador para galletas circular, retira el centro de cada rebanada de pan. Calienta un poco de mantequilla, coloca 1 rebanada de pan sin el centro, añade un poco de la mezcla de vegetales con huevo al centro del pan y cocina a fuego medio por ambos lados. Repite con el resto de los ingredientes."
             },
             {
                 "id": 93,
-                "description": "En una sartén caliente, forma el sándwich colocando una rebanada de pan, un poco de queso tipo manchego, una rebanada de queso cheddar, una de jamón y cubre con otra de pan, calienta por ambos lados hasta que se fundan los quesos. Repite el procedimiento, corta a la mitad y ofrece."
+                "description": "3. En una sartén caliente, forma el sándwich colocando una rebanada de pan, un poco de queso tipo manchego, una rebanada de queso cheddar, una de jamón y cubre con otra de pan, calienta por ambos lados hasta que se fundan los quesos. Repite el procedimiento, corta a la mitad y ofrece."
             }
         ],
         "kcal": 578
@@ -765,15 +765,15 @@
         "steps": [
             {
                 "id": 111,
-                "description": "Licúa las fresas con el agua, el hielo y el azúcar."
+                "description": "1. Licúa las fresas con el agua, el hielo y el azúcar."
             },
             {
                 "id": 112,
-                "description": "Sirve en 4 vasos una capa de la mezcla de fresas, una capa de leche condensada, repite hasta terminar con un poco de leche condensada."
+                "description": "2. Sirve en 4 vasos una capa de la mezcla de fresas, una capa de leche condensada, repite hasta terminar con un poco de leche condensada."
             },
             {
                 "id": 113,
-                "description": "Decora con las fresas y la menta. Ofrece."
+                "description": "3. Decora con las fresas y la menta. Ofrece."
             }
         ],
         "kcal": 162
@@ -828,15 +828,15 @@
         "steps": [
             {
                 "id": 121,
-                "description": "Licúa el agua con la leche en polvo, la leche condensada, los plátanos y 1/2 taza de coco."
+                "description": "1. Licúa el agua con la leche en polvo, la leche condensada, los plátanos y 1/2 taza de coco."
             },
             {
                 "id": 122,
-                "description": "En una jarra, vierte lo que licuaste con los hielos y mezcla."
+                "description": "2. En una jarra, vierte lo que licuaste con los hielos y mezcla."
             },
             {
                 "id": 123,
-                "description": "Sirve en vasos, decora con el coco en hojuelas y ofrece."
+                "description": "3. Sirve en vasos, decora con el coco en hojuelas y ofrece."
             }
         ],
         "kcal": 682
@@ -883,15 +883,15 @@
         "steps": [
             {
                 "id": 131,
-                "description": "Licúa el mango, el azúcar y 1/2 taza de leche de coco. Reserva."
+                "description": "1. Licúa el mango, el azúcar y 1/2 taza de leche de coco. Reserva."
             },
             {
                 "id": 132,
-                "description": "En un vaso alto, coloca las perlas de tapioca, encima hielo hasta llenar 3/4 del vaso."
+                "description": "2. En un vaso alto, coloca las perlas de tapioca, encima hielo hasta llenar 3/4 del vaso."
             },
             {
                 "id": 133,
-                "description": "Con cuidado vierte la leche de coco sobre los hielos para evitar que se mezclen y con ayuda de una cuchara, coloca un poco del licuado de mango. Disfruta."
+                "description": "3. Con cuidado vierte la leche de coco sobre los hielos para evitar que se mezclen y con ayuda de una cuchara, coloca un poco del licuado de mango. Disfruta."
             }
         ],
         "kcal": 357
@@ -942,15 +942,15 @@
         "steps": [
             {
                 "id": 141,
-                "description": "Licúa la leche en polvo con la leche condensada, el melón y el agua."
+                "description": "1. Licúa la leche en polvo con la leche condensada, el melón y el agua."
             },
             {
                 "id": 142,
-                "description": "Sirve el agua en una jarra con hielos."
+                "description": "2. Sirve el agua en una jarra con hielos."
             },
             {
                 "id": 143,
-                "description": "Disfruta."
+                "description": "3. Disfruta."
             }
         ],
         "kcal": 180
@@ -1009,15 +1009,15 @@
         "steps": [
             {
                 "id": 151,
-                "description": "Licúa la leche evaporada con el agua, el queso crema y la sal con cebolla en polvo"
+                "description": "1. Licúa la leche evaporada con el agua, el queso crema y la sal con cebolla en polvo"
             },
             {
                 "id": 152,
-                "description": "Cocina lo que licuaste a fuego bajo por 15 minutos o hasta que espese ligeramente, mueve constantemente para evitar que se pegue; retira del fuego."
+                "description": "2. Cocina lo que licuaste a fuego bajo por 15 minutos o hasta que espese ligeramente, mueve constantemente para evitar que se pegue; retira del fuego."
             },
             {
                 "id": 153,
-                "description": "Sirve la pasta caliente, baña con la salsa de queso y espolvorea con perejil picado. Ofrece."
+                "description": "3. Sirve la pasta caliente, baña con la salsa de queso y espolvorea con perejil picado. Ofrece."
             }
         ],
         "kcal": 805
@@ -1100,15 +1100,15 @@
         "steps": [
             {
                 "id": 161,
-                "description": "Licúa los jitomates con los chiles, el ajo, la cebolla y el Concentrado de Tomate con Pollo CONSOMATE®; cuela y reserva."
+                "description": "1. Licúa los jitomates con los chiles, el ajo, la cebolla y el Concentrado de Tomate con Pollo CONSOMATE®; cuela y reserva."
             },
             {
                 "id": 162,
-                "description": "Calienta el aceite en una olla, agrega la preparación anterior y cocina hasta que cambie de color ligeramente, agrega el agua, mezcla y cocina por 10 minutos más."
+                "description": "2. Calienta el aceite en una olla, agrega la preparación anterior y cocina hasta que cambie de color ligeramente, agrega el agua, mezcla y cocina por 10 minutos más."
             },
             {
                 "id": 163,
-                "description": "Sirve en un plato un poco de tiras de tortilla, baña con la sopa y decora con el queso, el aguacate y la media crema."
+                "description": "3. Sirve en un plato un poco de tiras de tortilla, baña con la sopa y decora con el queso, el aguacate y la media crema."
             }
         ],
         "kcal": 480
@@ -1179,15 +1179,15 @@
         "steps": [
             {
                 "id": 181,
-                "description": "En una sartén, calienta el aceite de cacahuate, añade el pimiento, los champiñones, el brócoli y la sal con cebolla; cocina por 5 minutos."
+                "description": "1. En una sartén, calienta el aceite de cacahuate, añade el pimiento, los champiñones, el brócoli y la sal con cebolla; cocina por 5 minutos."
             },
             {
                 "id": 182,
-                "description": "Agrega el espagueti cocido y escurrido, la Salsa de Soya MAGGI®, la sal con ajo, mezcla y decora con el ajonjolí."
+                "description": "2. Agrega el espagueti cocido y escurrido, la Salsa de Soya MAGGI®, la sal con ajo, mezcla y decora con el ajonjolí."
             },
             {
                 "id": 183,
-                "description": "Ofrece."
+                "description": "3. Ofrece."
             }
         ],
         "kcal": 480
@@ -1246,15 +1246,15 @@
         "steps": [
             {
                 "id": 191,
-                "description": "Licúa la mitad del agua con los jitomates, el ajo y la cebolla; cuela."
+                "description": "1. Licúa la mitad del agua con los jitomates, el ajo y la cebolla; cuela."
             },
             {
                 "id": 192,
-                "description": "Calienta el aceite, fríe el fideo hasta que cambie de color y añade el resto del agua con lo que licuaste; tapa y cocina a fuego medio de 8 a 10 minutos o hasta que el fideo esté suave."
+                "description": "2. Calienta el aceite, fríe el fideo hasta que cambie de color y añade el resto del agua con lo que licuaste; tapa y cocina a fuego medio de 8 a 10 minutos o hasta que el fideo esté suave."
             },
             {
                 "id": 193,
-                "description": "Agrega los cubos de caldo de pollo, mezcla y cocina 2 minutos más. Ofrece."
+                "description": "3. Agrega los cubos de caldo de pollo, mezcla y cocina 2 minutos más. Ofrece."
             }
         ],
         "kcal": 168
@@ -1289,11 +1289,11 @@
         "steps": [
             {
                 "id": 201,
-                "description": "Sirve las uvas en una copa"
+                "description": "1. Sirve las uvas en una copa"
             },
             {
                 "id": 202,
-                "description": "Agrega un poco de dulce de leche y cacahuates picados."
+                "description": "2. Agrega un poco de dulce de leche y cacahuates picados."
             }
         ],
         "kcal": 268
@@ -1340,15 +1340,15 @@
         "steps": [
             {
                 "id": 211,
-                "description": "En una sartén calienta la salsa tipo inglesa a fuego medio durante 5 minutos o hasta que espese un poco; reserva."
+                "description": "1. En una sartén calienta la salsa tipo inglesa a fuego medio durante 5 minutos o hasta que espese un poco; reserva."
             },
             {
                 "id": 212,
-                "description": "Unta las piezas de pan tostado con un poco de queso crema, coloca un cuarto de jitomate cherry y decora con una gota de la salsa tipo inglesa que reservaste."
+                "description": "2. Unta las piezas de pan tostado con un poco de queso crema, coloca un cuarto de jitomate cherry y decora con una gota de la salsa tipo inglesa que reservaste."
             },
             {
                 "id": 213,
-                "description": "Espolvorea las hierbas finas sobre las tapas y sirve."
+                "description": "3. Espolvorea las hierbas finas sobre las tapas y sirve."
             }
         ],
         "kcal": 57
@@ -1391,7 +1391,7 @@
         "steps": [
             {
                 "id": 221,
-                "description": "Mezcla el Sazonador Líquido MAGGI® con la salsa cátsup, el chipotle y el refresco de naranja."
+                "description": "1. Mezcla el Sazonador Líquido MAGGI® con la salsa cátsup, el chipotle y el refresco de naranja."
             }
         ],
         "kcal": 177
@@ -1434,15 +1434,15 @@
         "steps": [
             {
                 "id": 231,
-                "description": "Licúa la media crema con la mayonesa, la sal con ajo y la cebolla en polvo"
+                "description": "1. Licúa la media crema con la mayonesa, la sal con ajo y la cebolla en polvo"
             },
             {
                 "id": 232,
-                "description": "Refrigera por 30 minutos."
+                "description": "2. Refrigera por 30 minutos."
             },
             {
                 "id": 233,
-                "description": "Ofrece con papas fritas."
+                "description": "3. Ofrece con papas fritas."
             }
         ],
         "kcal": 400
@@ -1525,15 +1525,15 @@
         "steps": [
             {
                 "id": 241,
-                "description": "Mezcla la sal y la pimienta, espolvorea los filetes y cúbrelos con la harina, el huevo y por el pan molido. Calienta el aceite y fríelos por ambos lados, colócalos sobre papel absorbente para retirar el exceso de grasa."
+                "description": "1. Mezcla la sal y la pimienta, espolvorea los filetes y cúbrelos con la harina, el huevo y por el pan molido. Calienta el aceite y fríelos por ambos lados, colócalos sobre papel absorbente para retirar el exceso de grasa."
             },
             {
                 "id": 242,
-                "description": "Para la salsa, licúa los jitomates con la cebolla, el ajo y los cubos de caldo de pollo; agrega el cilantro y mezcla."
+                "description": "2. Para la salsa, licúa los jitomates con la cebolla, el ajo y los cubos de caldo de pollo; agrega el cilantro y mezcla."
             },
             {
                 "id": 243,
-                "description": "Acompaña los filetes con la salsa y ofrece."
+                "description": "3. Acompaña los filetes con la salsa y ofrece."
             }
         ],
         "kcal": 483
@@ -1588,19 +1588,19 @@
         "steps": [
             {
                 "id": 261,
-                "description": "Realiza cortes sesgados sobre las pechugas sin llegar a la base, rellénalas con un poco de cebolla, papas y rajas."
+                "description": "1. Realiza cortes sesgados sobre las pechugas sin llegar a la base, rellénalas con un poco de cebolla, papas y rajas."
             },
             {
                 "id": 262,
-                "description": "Agrégale a la pechuga de pollo un poco de sazonador de ajo y cebolla."
+                "description": "2. Agrégale a la pechuga de pollo un poco de sazonador de ajo y cebolla."
             },
             {
                 "id": 263,
-                "description": "Colócala en una sartén sin aceite, previamente precalentada a fuego bajo durante 1 minuto, tapa y asa a fuego bajo de 7 a 8 minutos por cada lado o hasta que esté bien cocida."
+                "description": "3. Colócala en una sartén sin aceite, previamente precalentada a fuego bajo durante 1 minuto, tapa y asa a fuego bajo de 7 a 8 minutos por cada lado o hasta que esté bien cocida."
             },
             {
                 "id": 264,
-                "description": "Repite el procedimiento con el resto de las pechugas. Antes de servir baña con media crema. Ofrece."
+                "description": "4. Repite el procedimiento con el resto de las pechugas. Antes de servir baña con media crema. Ofrece."
             }
         ],
         "kcal": 334
@@ -1727,19 +1727,19 @@
         "steps": [
             {
                 "id": 271,
-                "description": "Horno precalentado a 200 °C"
+                "description": "1. Horno precalentado a 200 °C"
             },
             {
                 "id": 272,
-                "description": "Para la salsa, coloca los jitomates en una charola con el aceite de oliva, la cebolla y el ajo; hornea a 200 °C de 45 a 50 minutos o hasta que estén dorados. Licúa los jitomates, la cebolla y los ajos rostizados con el caldo de pollo la sal con cebolla, el agua, las hierbas finas y la pimienta."
+                "description": "2. Para la salsa, coloca los jitomates en una charola con el aceite de oliva, la cebolla y el ajo; hornea a 200 °C de 45 a 50 minutos o hasta que estén dorados. Licúa los jitomates, la cebolla y los ajos rostizados con el caldo de pollo la sal con cebolla, el agua, las hierbas finas y la pimienta."
             },
             {
                 "id": 273,
-                "description": "Para el relleno, calienta el aceite y fríe la cebolla con el ajo hasta que cambien de color, añade la carne, la sal con cebolla, el Jugo MAGGI®, la salsa tipo inglesa y los champiñones; mezcla y cocina hasta que la carne esté cocida."
+                "description": "3. Para el relleno, calienta el aceite y fríe la cebolla con el ajo hasta que cambien de color, añade la carne, la sal con cebolla, el Jugo MAGGI®, la salsa tipo inglesa y los champiñones; mezcla y cocina hasta que la carne esté cocida."
             },
             {
                 "id": 274,
-                "description": "En un refractario engrasado con un poco de aceite, coloca una cucharada de salsa, una capa de láminas de lasaña precocida, una de relleno, una de salsa y queso rallado; repite el procedimiento hasta terminar con todos los ingredientes. Por último, termina con una capa de queso tipo manchego. Hornea a 200 °C de 20 a 25 minutos. Ofrece."
+                "description": "4. En un refractario engrasado con un poco de aceite, coloca una cucharada de salsa, una capa de láminas de lasaña precocida, una de relleno, una de salsa y queso rallado; repite el procedimiento hasta terminar con todos los ingredientes. Por último, termina con una capa de queso tipo manchego. Hornea a 200 °C de 20 a 25 minutos. Ofrece."
             }
         ],
         "kcal": 348
@@ -1810,15 +1810,15 @@
         "steps": [
             {
                 "id": 1,
-                "description": "Licúa la leche evaporada, la media crema, el queso crema, el agua, el consomé de pollo, la sal con ajo y el chile chipotle."
+                "description": "1. Licúa la leche evaporada, la media crema, el queso crema, el agua, el consomé de pollo, la sal con ajo y el chile chipotle."
             },
             {
                 "id": 2,
-                "description": "Calienta el puré de tomate hasta que cambie de color, agrega lo que licuaste y cocina hasta que espese ligeramente moviendo constantemente para evitar que se pegue."
+                "description": "2. Calienta el puré de tomate hasta que cambie de color, agrega lo que licuaste y cocina hasta que espese ligeramente moviendo constantemente para evitar que se pegue."
             },
             {
                 "id": 3,
-                "description": "Sirve las supremas de pollo con la salsa y decora con el perejil."
+                "description": "3. Sirve las supremas de pollo con la salsa y decora con el perejil."
             }
         ],
         "kcal": 285
@@ -1885,19 +1885,19 @@
         "steps": [
             {
                 "id": 11,
-                "description": "Horno precalentado a 180 °C."
+                "description": "1. Horno precalentado a 180 °C."
             },
             {
                 "id": 12,
-                "description": "Vierte el azúcar en una flanera y calienta a fuego medio para que se forme el caramelo; ladea con cuidado el molde para cubrir la superficie y las paredes."
+                "description": "2. Vierte el azúcar en una flanera y calienta a fuego medio para que se forme el caramelo; ladea con cuidado el molde para cubrir la superficie y las paredes."
             },
             {
                 "id": 13,
-                "description": "Licúa la leche condensada con la leche evaporada, el queso crema, los huevos y la esencia de vainilla. Vierte la preparación en la flanera y tapa con papel aluminio sellando las orillas. Coloca en un recipiente y cocina a baño María en el horno a 180 °C durante 1 1/2 hours."
+                "description": "3. Licúa la leche condensada con la leche evaporada, el queso crema, los huevos y la esencia de vainilla. Vierte la preparación en la flanera y tapa con papel aluminio sellando las orillas. Coloca en un recipiente y cocina a baño María en el horno a 180 °C durante 1 1/2 hours."
             },
             {
                 "id": 14,
-                "description": "Retira del fuego and deja enfriar por completo; desmolda and sirve."
+                "description": "4. Retira del fuego and deja enfriar por completo; desmolda and sirve."
             }
         ],
         "kcal": 265
@@ -1968,15 +1968,15 @@
         "steps": [
             {
                 "id": 17,
-                "description": "Horno precalentado a 180 °C."
+                "description": "1. Horno precalentado a 180 °C."
             },
             {
                 "id": 18,
-                "description": "Mezcla la mantequilla con la leche condensada, el huevo, el polvo de chocolate para bebida caliente, la harina y el polvo para hornear hasta integrar por completo."
+                "description": "2. Mezcla la mantequilla con la leche condensada, el huevo, el polvo de chocolate para bebida caliente, la harina y el polvo para hornear hasta integrar por completo."
             },
             {
                 "id": 19,
-                "description": "Vierte en un molde cubierto con papel encerado and hornea a 180 °C de 25 a 30 minutes; deja enfriar. Desmolda, corta en cuadros, decora con las frambuesas, el azúcar glass and las hojas de menta. Ofrece."
+                "description": "3. Vierte en un molde cubierto con papel encerado and hornea a 180 °C de 25 a 30 minutes; deja enfriar. Desmolda, corta en cuadros, decora con las frambuesas, el azúcar glass and las hojas de menta. Ofrece."
             }
         ],
         "kcal": 323
@@ -2035,15 +2035,15 @@
         "steps": [
             {
                 "id": 26,
-                "description": "Licúa la leche evaporada con la leche condensada, la media crema, el agua y 5 mazapanes; con la licuadora encendida agrega poco a poco la grenetina disuelta."
+                "description": "1. Licúa la leche evaporada con la leche condensada, la media crema, el agua y 5 mazapanes; con la licuadora encendida agrega poco a poco la grenetina disuelta."
             },
             {
                 "id": 27,
-                "description": "Vierte lo que licuaste en un molde para gelatina engrasado, refrigera hasta que cuaje por completo."
+                "description": "2. Vierte lo que licuaste en un molde para gelatina engrasado, refrigera hasta que cuaje por completo."
             },
             {
                 "id": 28,
-                "description": "Desmolda, decora con el resto del mazapán y las fresas. Ofrece."
+                "description": "3. Desmolda, decora con el resto del mazapán y las fresas. Ofrece."
             }
         ],
         "kcal": 230
@@ -2134,15 +2134,15 @@
         "steps": [
             {
                 "id": 29,
-                "description": "Prepara las gelatinas de sabor una por una con dos tazas menos de agua de lo que indica el empaque. Viértelas separadas en moldes rectangulares y refrigera hasta que cuajen. Córtalas en cubitos, combínalos y colócalos en un molde para gelatina engrasado."
+                "description": "1. Prepara las gelatinas de sabor una por una con dos tazas menos de agua de lo que indica el empaque. Viértelas separadas en moldes rectangulares y refrigera hasta que cuajen. Córtalas en cubitos, combínalos y colócalos en un molde para gelatina engrasado."
             },
             {
                 "id": 30,
-                "description": "Licúa la leche condensada con la leche evaporada, la media crema y la esencia de vainilla; con la licuadora encendida agrega, poco a poco, la grenetina previamente disuelta."
+                "description": "2. Licúa la leche condensada con la leche evaporada, la media crema y la esencia de vainilla; con la licuadora encendida agrega, poco a poco, la grenetina previamente disuelta."
             },
             {
                 "id": 31,
-                "description": "Vierte lo que licuaste al molde con las gelatinas de sabor y refrigera hasta que cuaje por completo; desmolda and decora con las fresas, el mango, las rodajas de limón and las hojas de menta. Ofrece."
+                "description": "3. Vierte lo que licuaste al molde con las gelatinas de sabor y refrigera hasta que cuaje por completo; desmolda and decora con las fresas, el mango, las rodajas de limón and las hojas de menta. Ofrece."
             }
         ],
         "kcal": 225
