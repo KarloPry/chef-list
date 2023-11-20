@@ -1,23 +1,44 @@
 import React, { useEffect, useState, useRef } from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-import * as ImagePicker from "expo-image-picker";
 import { Camera } from "expo-camera";
 import NavBar from "../../components/NavBar";
-import CustomButton from "../../components/CustomButton";
+import { useNavigation } from "@react-navigation/native";
 
-export default function CameraIA({ navigation }) {
+export default function CameraIA() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [hasCameraPermission, setHasCameraPermission] = useState(null);
   const [photoTaken, setPhotoTaken] = useState(false);
   const [error, setError] = useState();
   const cameraRef = useRef(null);
+  const navigation = useNavigation();
 
   function handleIAResponse(prediction) {
     let recipe = null;
-    switch (response) {
+    switch (prediction) {
       case "pancakes":
+        console.log("pancakes");
+        recipe = require("../../data/comida.json").filter(
+          (recipe) => recipe.id == 1
+        );
+        break;
+      case "lasagna":
+        console.log("lasagna");
+        recipe = require("../../data/comida.json").filter(
+          (recipe) => recipe.id == 23
+        );
+      case "cheesecake":
+        console.log("cheesecake");
+        recipe = require("../../data/comida.json").filter(
+          (recipe) => recipe.id == 23
+        );
+      default:
+        recipe = null;
+        break;
     }
-    recipe !== null ? navigation.navigate("Details", recipe) : setError(true);
+    recipe = recipe[0];
+    recipe !== null
+      ? navigation.navigate("Details", {recipe})
+      : setError(true);
   }
   useEffect(() => {
     (async () => {
@@ -49,7 +70,7 @@ export default function CameraIA({ navigation }) {
       name: "image.jpg",
     });
 
-    const apiUrl = "http://148.220.213.234:8000/predict";
+    const apiUrl = "http://192.168.1.70:8000/predict";
 
     try {
       const response = await fetch(apiUrl, {
@@ -66,6 +87,8 @@ export default function CameraIA({ navigation }) {
 
       const resultJson = await response.json();
       console.log(resultJson);
+      console.log(resultJson.PredictedClass);
+      handleIAResponse(resultJson.PredictedClass);
       setError(false);
     } catch (error) {
       console.error("Error during fetch:", error);

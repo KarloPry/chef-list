@@ -10,6 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Details({ route }) {
   const recipe = route.params.recipe;
+  console.log(recipe);
   let savedIngredients = [];
   const [saved, setSaved] = useState(false);
 
