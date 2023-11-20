@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { View, ScrollView, StyleSheet } from "react-native";
 import FoodCard from "../../components/FoodCard";
 import { useNavigation } from "@react-navigation/native";
+import { StatusBar } from 'expo-status-bar';
 
 export default function SearchResults({ route }) {
  const navigation = useNavigation();
@@ -13,7 +14,11 @@ export default function SearchResults({ route }) {
   let recipes = require("../../data/comida.json");
   useEffect(() => {
     navigation.setOptions({
-      title: name
+      title: name,
+      headerTintColor:"white",
+      headerStyle:{
+        backgroundColor: '#6EA850'
+      }
     });
   }, []);
   
@@ -22,6 +27,8 @@ export default function SearchResults({ route }) {
   recipes = recipes.filter((recipe) => recipe.category == name);
 
   return (
+    <>
+    <StatusBar style='light'/>
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       {recipes.map((recipe) => {
         return (
@@ -31,6 +38,7 @@ export default function SearchResults({ route }) {
         );
       })}
     </ScrollView>
+    </>
   );
 }
 const styles = StyleSheet.create({
