@@ -20,7 +20,7 @@ export default function StackMain({ navigation }) {
       <Stack.Navigator initialRouteName="Main">
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="Details" component={Details} />
-        <Stack.Screen name="List" component={List} />
+        <Stack.Screen name="List" component={List} options={{title:"Lista de compras"}}/>
         <Stack.Screen name="SearchResults" component={SearchResults} options={{title: "Resultados"}}/>
       </Stack.Navigator>
     </MainNavContext.Provider>

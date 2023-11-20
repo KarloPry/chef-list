@@ -3,8 +3,11 @@ import { ScrollView, View, Text, StyleSheet, Button } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import RecipeList from "../../components/RecipeList";
+import { StatusBar } from "expo-status-bar";
+import { useNavigation } from "@react-navigation/native";
 
 export default function List() {
+  const navigation = useNavigation()
   const [recipes, setRecipes] = useState([]);
   const [allIngredientsChecked, setAllIngredientsChecked] = useState(false);
 
@@ -14,17 +17,6 @@ export default function List() {
       recipe.ingredients.every((ingredient) => ingredient.checked)
     );
     setAllIngredientsChecked(areAllIngredientsChecked);
-  }
-
-  // Function to handle ingredient checkbox check/uncheck
-  function handleCheckIngredient(ingredient, recipeIndex) {
-    const updatedRecipes = [...recipes];
-    updatedRecipes[recipeIndex].ingredients = updatedRecipes[
-      recipeIndex
-    ].ingredients.map((i) =>
-      i.id === ingredient.id ? { ...i, checked: !i.checked } : i
-    );
-    setRecipes(updatedRecipes);
   }
 
   // UseEffect to load saved recipes
@@ -41,6 +33,12 @@ export default function List() {
         setRecipes(recipesArray);
       }
     };
+    navigation.setOptions({
+      headerTintColor:"white",
+      headerStyle:{
+        backgroundColor: '#6EA850'
+      }
+    });
     loadRecipes();
   }, []);
 
@@ -51,8 +49,9 @@ export default function List() {
   }, [recipes]);
 
   return (
+    <>
+    <StatusBar style='light'/>
     <ScrollView contentContainerStyle={styles.mainContainer}>
-      <Text style={styles.mainText}>Lista de Recetas</Text>
       {recipes.map((recipe) => {
         colorType = colorType * -1;
         let colorBg = colorType === -1 ? "#FFFAF0" : "#FBFFF2";
@@ -80,6 +79,7 @@ export default function List() {
         );
       })}
     </ScrollView>
+    </>
   );
 }
 
