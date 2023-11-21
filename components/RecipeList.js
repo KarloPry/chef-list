@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import CustomButton from "./CustomButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+
 export default function RecipeList({ recipe, mainColor, softColor }) {
   const [allChecked, setAllChecked] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
