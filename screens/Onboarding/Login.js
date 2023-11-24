@@ -13,7 +13,7 @@ export default function Login({ navigation }) {
     });
   }, []);
   const handleSignInPress = () => {
-    navigation.goBack();
+    navigation.navigate("SignIn")
   }
   async function handleSubmit() {
     const DATA = await AsyncStorage.getItem("login_data");
@@ -32,6 +32,8 @@ export default function Login({ navigation }) {
     }
   };
   return (
+    <>
+    <StatusBar style="light"/>
     <ImageBackground
       source={require("../../assets/images/background.jpg")}
       style={styles.container}
@@ -76,6 +78,7 @@ export default function Login({ navigation }) {
           <StatusBar style="auto" />
         </View>
     </ImageBackground>
+    </>
   );
 }
 

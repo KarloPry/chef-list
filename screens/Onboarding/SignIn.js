@@ -60,7 +60,7 @@ export default function SignIn({ navigation }) {
     const DATA = await AsyncStorage.getItem("login_data");
     const login_data_parsed = JSON.parse(DATA);
     //save data in async storage
-    const user = login_data_parsed.find( (user) => user.user_email === email);
+    const user = login_data_parsed.find((user) => user.user_email === email);
     if (user) {
       alert("El correo ya está registrado");
       return;
@@ -76,81 +76,87 @@ export default function SignIn({ navigation }) {
         user_name: name,
       };
       login_data_parsed.push(new_user);
-      await AsyncStorage.setItem("login_data", JSON.stringify(login_data_parsed));
+      await AsyncStorage.setItem(
+        "login_data",
+        JSON.stringify(login_data_parsed)
+      );
       navigation.navigate("StackMain");
-    };
-
-  };
+    }
+  }
   return (
-    <ImageBackground
-      source={require("../../assets/images/background.jpg")}
-      style={styles.container}
-    >
-      <View style={styles.container}>
-        <View style={styles.welcome}>
-          <Image
-            source={require("../../assets/images/icon.png")}
-            style={styles.welcome_image}
+    <>
+      <StatusBar style="light" />
+
+      <ImageBackground
+        source={require("../../assets/images/background.jpg")}
+        style={styles.container}
+      >
+        <View style={styles.container}>
+          <View style={styles.welcome}>
+            <Image
+              source={require("../../assets/images/icon.png")}
+              style={styles.welcome_image}
+            />
+            <Text style={styles.welcome_text}>¡Bienvenido a ChefList!</Text>
+          </View>
+          <LoginInput
+            name="Nombre"
+            placeholder="Nombre"
+            type="text"
+            onChangeText={(text) => setName(text)}
           />
-          <Text style={styles.welcome_text}>¡Bienvenido a ChefList!</Text>
-        </View>
-        <LoginInput
-          name="Nombre"
-          placeholder="Nombre"
-          type="text"
-          onChangeText={(text) => setName(text)}
-        />
-        <LoginInput
-          name="Correo Electrónico"
-          placeholder="ejemplo@email.com"
-          type="text"
-          onChangeText={(text) => setEmail(text)}
-        />
-        <LoginInput
-          name="Contraseña"
-          placeholder="*********"
-          type="password"
-          onChangeText={(text) => setPassword(text)}
-        />
-        <LoginInput
-          name="Confirmar Contraseña"
-          placeholder="*********"
-          type="password"
-          onChangeText={(text) => setConfirmPassword(text)}
-        />
-        <View
-          style={{
-            alignItems: "flex-end",
-            width: "100%",
-            paddingRight: 24,
-            flexDirection: "column",
-          }}
-        >
-          <CustomButton
-            text="Registrarse"
-            color="#F28B0C"
-            action={handleSubmit}
+          <LoginInput
+            name="Correo Electrónico"
+            placeholder="ejemplo@email.com"
+            type="text"
+            onChangeText={(text) => setEmail(text)}
           />
-        </View>
-        <Text
-          style={{
-            color: "rgba(166, 166, 166, 1)",
-            fontSize: 14,
-            fontWeight: "300",
-            paddingTop: 20,
-          }}
-        >
-          ¿Ya tienes una cuenta?{" "}
-          <Text
-            style={{ textDecorationLine: "underline", fontWeight: "600" }}
-            onPress={handleLoginPress}
+          <LoginInput
+            name="Contraseña"
+            placeholder="*********"
+            type="password"
+            onChangeText={(text) => setPassword(text)}
+          />
+          <LoginInput
+            name="Confirmar Contraseña"
+            placeholder="*********"
+            type="password"
+            onChangeText={(text) => setConfirmPassword(text)}
+          />
+          <View
+            style={{
+              alignItems: "flex-end",
+              width: "100%",
+              paddingRight: 24,
+              flexDirection: "column",
+            }}
           >
-            Inicia sesión
+            <CustomButton
+              text="Registrarse"
+              color="#F28B0C"
+              action={handleSubmit}
+            />
+          </View>
+          <Text
+            style={{
+              color: "rgba(166, 166, 166, 1)",
+              fontSize: 14,
+              fontWeight: "300",
+              paddingTop: 20,
+            }}
+          >
+            ¿Ya tienes una cuenta?{" "}
+            <Text
+              style={{ textDecorationLine: "underline", fontWeight: "600" }}
+              onPress={handleLoginPress}
+            >
+              Inicia sesión
+            </Text>
           </Text>
-        </Text>
-        <StatusBar style="auto" />
-      </View>
-    </ImageBackground>
+          <StatusBar style="auto" />
+        </View>
+      </ImageBackground>
+    </>
   );
 }
 

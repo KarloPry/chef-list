@@ -18,7 +18,7 @@ export default function Details({ route }) {
     const recipes = await AsyncStorage.getItem("Recetas");
     return recipes;
   }
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   useEffect(() => {
     const loadRecipes = async () => {
       const recipes = await getSavedRecipes();
@@ -33,7 +33,11 @@ export default function Details({ route }) {
       }
     };
     navigation.setOptions({
-      headerShown: false,
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "#6EA850",
+      },
+      headerTitle: "Receta "
     });
     loadRecipes();
   }, []);
@@ -78,35 +82,109 @@ export default function Details({ route }) {
 
   return (
     <>
-    <NavBar />
-    <ScrollView contentContainerStyle={styles.detailsContainer}>
-      <View style={styles.foodName}>
-        <Text style={styles.foodNameText}>{recipe.name}</Text>
-      </View>
-      <Image
-        source={{ uri: recipe.image }}
-        style={{ height: 290, width: 290, borderRadius: 20 }}
-      />
-      <View style={styles.portionsTimeContainer}>
-        <View style={styles.portionsContainer}>
-          <View
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <Image
-              source={require("../../assets/images/Portions.png")}
-              style={{ height: 24, width: 24 }}
-            />
-            <Text>Porciones</Text>
-          </View>
-          <GrayVerticalLine height={40} color="gray" />
-          <Text style={{ fontSize: 20 }}>{recipe.portions}</Text>
+      <ScrollView contentContainerStyle={styles.detailsContainer}>
+        <View style={styles.foodName}>
+          <Text style={styles.foodNameText}>{recipe.name}</Text>
         </View>
-        <GrayVerticalLine height={50} color="black" />
-        <View style={styles.portionsContainer}>
+        <Image
+          source={{ uri: recipe.image }}
+          style={{ height: 290, width: 290, borderRadius: 20 }}
+        />
+        <View style={styles.portionsTimeContainer}>
+          <View style={styles.portionsContainer}>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={require("../../assets/images/Portions.png")}
+                style={{ height: 24, width: 24 }}
+              />
+              <Text>Porciones</Text>
+            </View>
+            <GrayVerticalLine height={40} color="gray" />
+            <Text style={{ fontSize: 20 }}>{recipe.portions}</Text>
+          </View>
+          <GrayVerticalLine height={50} color="black" />
+          <View style={styles.portionsContainer}>
+            <View
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={require("../../assets/images/clock.png")}
+                style={{ height: 24, width: 24 }}
+              />
+              <Text>Tiempo</Text>
+            </View>
+            <GrayVerticalLine height={40} color="gray" />
+            <Text style={{ fontSize: 18 }}>
+              {recipe.cookingTime} <Text style={{ fontSize: 10 }}>min</Text>
+            </Text>
+          </View>
+        </View>
+
+        <LinearGradient
+          colors={["#FFDAB1", "transparent"]}
+          locations={[0.8, 1]}
+          style={styles.utensils}
+        >
+          <Text style={styles.titleList}>Utensilios</Text>
+          {recipe.utensils.map((utensil) => (
+            <Text style={styles.textList} key={utensil.id}>
+              {utensil.name}
+            </Text>
+          ))}
+        </LinearGradient>
+        <LinearGradient
+          colors={["#DFF8D1", "transparent"]}
+          locations={[0.8, 1]}
+          style={styles.utensils}
+        >
+          <Text style={styles.titleList}>Ingredientes</Text>
+          <View style={styles.textList}>
+            {recipe.ingredients.map((ingredient) => (
+              <BouncyCheckbox
+                key={ingredient.id}
+                text={ingredient.name}
+                textStyle={{ color: "black" }}
+                onPress={() => handleCheckIngredient(ingredient)}
+              />
+            ))}
+          </View>
+          <View style={styles.bottomList}>
+            {saved ? (
+              <View style={{ alignItems: "center" }}>
+                <Text style={{ fontSize: 16 }}>Guardado ✅</Text>
+              </View>
+            ) : (
+              <CustomButton
+                text="Guardar 🔖"
+                color="#F28B0C"
+                action={handleSaveIngredients}
+              />
+            )}
+          </View>
+        </LinearGradient>
+        <LinearGradient
+          colors={["#FEFFCF", "transparent"]}
+          locations={[0.8, 1]}
+          style={styles.pasos}
+        >
+          <Text style={styles.titleList}>Pasos</Text>
+          {recipe.steps.map((step) => (
+            <Text style={styles.textList} key={step.id}>
+              {step.description}
+            </Text>
+          ))}
+        </LinearGradient>
+        <View style={styles.kcal}>
           <View
             style={{
               display: "flex",
@@ -115,94 +193,17 @@ export default function Details({ route }) {
             }}
           >
             <Image
-              source={require("../../assets/images/clock.png")}
+              source={require("../../assets/images/kcal.png")}
               style={{ height: 24, width: 24 }}
             />
-            <Text>Tiempo</Text>
+            <Text>Valor Nutricional</Text>
           </View>
           <GrayVerticalLine height={40} color="gray" />
-          <Text style={{ fontSize: 18 }}>
-            {recipe.cookingTime} <Text style={{ fontSize: 10 }}>min</Text>
+          <Text style={{ fontSize: 20 }}>
+            {recipe.kcal} <Text style={{ fontSize: 16 }}>kcal</Text>
           </Text>
         </View>
-      </View>
-
-      <LinearGradient
-        colors={["#FFDAB1", "transparent"]}
-        locations={[0.8, 1]}
-        style={styles.utensils}
-      >
-        <Text style={styles.titleList}>
-          Utensilios
-        </Text>
-        {recipe.utensils.map((utensil) => (
-          <Text style={styles.textList} key={utensil.id}>{utensil.name}</Text>
-        ))}
-      </LinearGradient>
-      <LinearGradient
-        colors={["#DFF8D1", "transparent"]}
-        locations={[0.8, 1]}
-        style={styles.utensils}
-      >
-        <Text style={styles.titleList}>
-          Ingredientes
-        </Text>
-        <View style={styles.textList}>
-          {recipe.ingredients.map((ingredient) => (
-            <BouncyCheckbox
-              key={ingredient.id}
-              text={ingredient.name}
-              textStyle={{ color: "black" }}
-              onPress={() => handleCheckIngredient(ingredient)}
-            />
-          ))}
-        </View>
-        <View style={styles.bottomList}>
-          {saved ? (
-            <View style={{ alignItems: "center" }}>
-              <Text style={{ fontSize: 16 }}>Guardado ✅</Text>
-            </View>
-          ) : (
-            <CustomButton
-              text="Guardar 🔖"
-              color="#F28B0C"
-              action={handleSaveIngredients}
-            />
-          )}
-        </View>
-      </LinearGradient>
-      <LinearGradient
-        colors={["#FEFFCF", "transparent"]}
-        locations={[0.8, 1]}
-        style={styles.pasos}
-      >
-        <Text style={styles.titleList}>
-          Pasos
-        </Text>
-        {recipe.steps.map((step) => (
-          <Text style={styles.textList} key={step.id}>{step.description}</Text>
-        ))}
-      </LinearGradient>
-      <View style={styles.kcal}>
-        <View
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            source={require("../../assets/images/kcal.png")}
-            style={{ height: 24, width: 24 }}
-          />
-          <Text>Valor Nutricional</Text>
-        </View>
-        <GrayVerticalLine height={40} color="gray" />
-        <Text style={{ fontSize: 20 }}>
-          {recipe.kcal} <Text style={{ fontSize: 16 }}>kcal</Text>
-        </Text>
-      </View>
-    </ScrollView>
+      </ScrollView>
     </>
   );
 }
@@ -218,13 +219,13 @@ const styles = StyleSheet.create({
   foodName: {
     borderRadius: 60,
     flex: 1,
-    alignItems: 'center',
-    justifyContent:'center',
+    alignItems: "center",
+    justifyContent: "center",
     backgroundColor: "#FFB000",
     padding: 20,
   },
   foodNameText: {
-    textAlign:'center',
+    textAlign: "center",
     color: "white",
     fontSize: 20,
     fontWeight: "600",
@@ -250,11 +251,11 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "column",
     paddingHorizontal: 20,
-    paddingRight:45,
+    paddingRight: 45,
     paddingVertical: 20,
     paddingBottom: 45,
     borderRadius: 15,
-    marginRight:10,
+    marginRight: 10,
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 0,
     width: 350,
@@ -267,11 +268,11 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingBottom: 45,
     borderRadius: 15,
-    marginRight:10,
+    marginRight: 10,
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 0,
     width: 350,
-    gap:15,
+    gap: 15,
   },
   kcal: {
     display: "flex",
@@ -283,18 +284,18 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     gap: 24,
   },
-  titleList:{
-    fontSize: 20, 
-    fontWeight: "600", 
-    paddingVertical: 5 
+  titleList: {
+    fontSize: 20,
+    fontWeight: "600",
+    paddingVertical: 5,
   },
-  textList:{
-    fontSize:16,
+  textList: {
+    fontSize: 16,
     gap: 10,
   },
-  bottomList:{ 
-    display: "flex", 
-    marginTop: 20, 
-    alignItems:'flex-end',
-  }
+  bottomList: {
+    display: "flex",
+    marginTop: 20,
+    alignItems: "flex-end",
+  },
 });

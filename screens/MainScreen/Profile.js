@@ -1,17 +1,27 @@
-import React, {useEffect, useState} from "react";
-import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, ScrollView} from "react-native";
-import * as ImagePicker from 'expo-image-picker';
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+} from "react-native";
+import * as ImagePicker from "expo-image-picker";
 import FoodCard from "../../components/FoodCard";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import NavBar from "../../components/NavBarProfile";
 
 export default function Profile({ navigation }) {
-  const [profileImage, setProfileImage] = useState(require("../../assets/images/profile.png"));
+  const [profileImage, setProfileImage] = useState(
+    require("../../assets/images/profile.png")
+  );
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false); 
+  const [showPassword, setShowPassword] = useState(false);
   const [editableFields, setEditableFields] = useState(false);
   const DATA = require("../../data/comida.json");
 
@@ -43,10 +53,11 @@ export default function Profile({ navigation }) {
   };
 
   const changeProfileImage = async () => {
-    try{
-      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-      if (status !== 'granted') {
-        console.error('Permission to access media library was denied');
+    try {
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== "granted") {
+        console.error("Permission to access media library was denied");
         return;
       }
 
@@ -58,16 +69,15 @@ export default function Profile({ navigation }) {
       });
 
       if (!result.cancelled) {
-        console.log('Image URI:', result.assets[0].uri);
+        console.log("Image URI:", result.assets[0].uri);
         setProfileImage({ uri: result.assets[0].uri });
       }
 
       if (!result.cancelled) {
         setProfileImage({ uri: result.assets[0].uri });
       }
-      
     } catch (error) {
-      console.error('Error selecting image:', error);
+      console.error("Error selecting image:", error);
     }
   };
 
@@ -84,12 +94,14 @@ export default function Profile({ navigation }) {
     setEditableFields(false);
   };
 
-
   return (
     <>
-      <NavBar onEditPress={handleEditPress}/>
+      <NavBar onEditPress={handleEditPress} />
       <ScrollView>
-        <TouchableOpacity onPress={changeProfileImage} style={styles.profileImageContainer}>
+        <TouchableOpacity
+          onPress={changeProfileImage}
+          style={styles.profileImageContainer}
+        >
           <Image source={profileImage} style={styles.profileImage} />
         </TouchableOpacity>
         <Text style={styles.text}>Bienvenido</Text>
@@ -104,10 +116,16 @@ export default function Profile({ navigation }) {
           />
           {editableFields && (
             <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={handleSavePress} style={styles.saveButton}>
+              <TouchableOpacity
+                onPress={handleSavePress}
+                style={styles.saveButton}
+              >
                 <Text style={styles.buttonText}>Guardar</Text>
               </TouchableOpacity>
-              <TouchableOpacity onPress={handleCancelPress} style={styles.cancelButton}>
+              <TouchableOpacity
+                onPress={handleCancelPress}
+                style={styles.cancelButton}
+              >
                 <Text style={styles.buttonText}>Cancelar</Text>
               </TouchableOpacity>
             </View>
@@ -125,48 +143,79 @@ export default function Profile({ navigation }) {
           />
           {editableFields && (
             <View style={styles.buttonContainer}>
-              <TouchableOpacity onPress={handleSavePress} style={styles.saveButton}>
-            <Text style={styles.buttonText}>Guardar</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={handleCancelPress} style={styles.cancelButton}>
-            <Text style={styles.buttonText}>Cancelar</Text>
+              <TouchableOpacity
+                onPress={handleSavePress}
+                style={styles.saveButton}
+              >
+                <Text style={styles.buttonText}>Guardar</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={handleCancelPress}
+                style={styles.cancelButton}
+              >
+                <Text style={styles.buttonText}>Cancelar</Text>
+              </TouchableOpacity>
+            </View>
+          )}
+        </View>
+
+        <Text style={styles.text}>Platillo favorito:</Text>
+        <FoodCard style={styles.platillo} recipe={DATA[1]} />
+
+        <Text style={styles.text}>Contraseña:</Text>
+        <View style={styles.passwordContainer}>
+          <TextInput
+            style={styles.passwordInput}
+            value={userPassword}
+            editable={editableFields}
+            secureTextEntry={!showPassword}
+            onChangeText={setUserPassword}
+          />
+          <TouchableOpacity
+            onPress={toggleShowPassword}
+            style={styles.toggleButton}
+          >
+            <Text style={styles.buttonText}>
+              {showPassword ? "Ocultar" : "Mostrar"}
+            </Text>
           </TouchableOpacity>
         </View>
-      )}
-    </View>
 
-    <Text style={styles.text}>Platillo favorito:</Text>
-    <FoodCard style={styles.platillo} recipe={DATA[1]} />
-
-    <Text style={styles.text}>Contraseña:</Text>
-<View style={styles.passwordContainer}>
-  <TextInput
-    style={styles.passwordInput}
-    value={userPassword}
-    editable={editableFields}
-    secureTextEntry={!showPassword}
-    onChangeText={setUserPassword}
-  />
-  <TouchableOpacity onPress={toggleShowPassword} style={styles.toggleButton}>
-    <Text style={styles.buttonText}>
-      {showPassword ? 'Ocultar' : 'Mostrar'}
-    </Text>
-  </TouchableOpacity>
-</View>
-
-{editableFields && (
-  <View style={styles.buttonContainerPwd}>
-    <TouchableOpacity onPress={handleSavePress} style={styles.saveButton}>
-      <Text style={styles.buttonText}>Guardar</Text>
-    </TouchableOpacity>
-    <TouchableOpacity onPress={handleCancelPress} style={styles.cancelButton}>
-      <Text style={styles.buttonText}>Cancelar</Text>
-    </TouchableOpacity>
-  </View>
-)}
-  </ScrollView>
-</>
-);}
+        {editableFields && (
+          <View style={styles.buttonContainerPwd}>
+            <TouchableOpacity
+              onPress={handleSavePress}
+              style={styles.saveButton}
+            >
+              <Text style={styles.buttonText}>Guardar</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={handleCancelPress}
+              style={styles.cancelButton}
+            >
+              <Text style={styles.buttonText}>Cancelar</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+        <View
+          style={{
+            backgroundColor: "red",
+            paddingHorizontal: 4,
+            paddingVertical: 4,
+          }}
+        >
+          <TouchableOpacity onPress={()=>{
+            navigation.navigate("Login")
+          }}>
+            <Text style={{ color: "white", textAlign: "center" }}>
+              Cerrar Sesión
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
+    </>
+  );
+}
 
 const styles = StyleSheet.create({
   profileImageContainer: {
@@ -176,7 +225,7 @@ const styles = StyleSheet.create({
   profileImage: {
     width: 200,
     height: 200,
-    borderRadius: 100, 
+    borderRadius: 100,
     borderWidth: 3,
     borderColor: "#537D3D",
   },
@@ -184,64 +233,64 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
     marginTop: 20,
-    marginBottom:10,
+    marginBottom: 10,
     color: "#537D3D",
-    textAlign: 'center',
+    textAlign: "center",
   },
-  inputs:{
+  inputs: {
     height: 40,
-    width: 350, 
+    width: 350,
     marginTop: 5,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 23,
-    alignSelf: 'center',
-    marginBottom:5,
+    alignSelf: "center",
+    marginBottom: 5,
   },
   passwordContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginTop: 5,
   },
   passwordInput: {
     height: 40,
     width: 240,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 20,
-    alignSelf: 'center',
+    alignSelf: "center",
     marginBottom: 5,
   },
   toggleButton: {
     padding: 10,
     borderRadius: 8,
-    backgroundColor: '#537D3D',
+    backgroundColor: "#537D3D",
   },
-  buttonContainerPwd:{
-    flexDirection: 'row',
-    justifyContent: 'center',
+  buttonContainerPwd: {
+    flexDirection: "row",
+    justifyContent: "center",
     gap: 10,
     marginTop: 10,
-    marginBottom:20,
+    marginBottom: 20,
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
+    flexDirection: "row",
+    justifyContent: "center",
     gap: 10,
     marginTop: 10,
   },
   saveButton: {
     padding: 10,
     borderRadius: 8,
-    backgroundColor: '#537D3D',
+    backgroundColor: "#537D3D",
   },
   cancelButton: {
     padding: 10,
     borderRadius: 8,
-    backgroundColor: '#EC4437',
+    backgroundColor: "#EC4437",
   },
   buttonText: {
-    color: '#FFFFFF',
+    color: "#FFFFFF",
     fontSize: 17,
-    textAlign: 'center',
-    fontWeight: 'bold',
+    textAlign: "center",
+    fontWeight: "bold",
   },
 });
