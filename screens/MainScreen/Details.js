@@ -153,6 +153,8 @@ export default function Details({ route }) {
               <BouncyCheckbox
                 key={ingredient.id}
                 text={ingredient.name}
+                fillColor="green"
+                unfillColor="white"
                 textStyle={{ color: "black" }}
                 onPress={() => handleCheckIngredient(ingredient)}
               />
