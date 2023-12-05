@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -8,6 +8,7 @@ import {
   TextInput,
   ScrollView,
 } from "react-native";
+import { FavoriteContext } from "../Routers/Main";
 import * as ImagePicker from "expo-image-picker";
 import FoodCard from "../../components/FoodCard";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -24,8 +25,10 @@ export default function Profile({ navigation }) {
   const [showPassword, setShowPassword] = useState(false);
   const [editableFields, setEditableFields] = useState(false);
   const DATA = require("../../data/comida.json");
+  const contextFood = useContext(FavoriteContext)
 
   useEffect(() => {
+    console.log(contextFood.favorite)
     navigation.setOptions({
       headerShown: false,
     });
@@ -160,7 +163,7 @@ export default function Profile({ navigation }) {
         </View>
 
         <Text style={styles.text}>Platillo favorito:</Text>
-        <FoodCard style={styles.platillo} recipe={DATA[1]} />
+        <FoodCard style={styles.platillo} recipe={DATA[contextFood.favorite - 1]} />
 
         <Text style={styles.text}>Contraseña:</Text>
         <View style={styles.passwordContainer}>
@@ -299,6 +302,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginBottom: 30,
     marginTop: 20,
-    alignContent: "left",
+    textAlign: "center",
+    alignSelf: "center"
   },
 });

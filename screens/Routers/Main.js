@@ -16,7 +16,7 @@ import ProfileIcon from "../../assets/svgs/ProfileIcon";
 export const FavoriteContext = createContext();
 export default function Main({ navigation }) {
   const Tab = createBottomTabNavigator();
-  const [favorite, setFavorite] = useState();
+  const [favorite, setFavorite] = useState(1);
   disableBackButton();
   useEffect(() => {
     navigation.setOptions({

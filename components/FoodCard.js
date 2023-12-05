@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import CustomButton from "./CustomButton";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 import { FavoriteContext } from "../screens/Routers/Main";
 //Context
 import MainNavContext from "../context/MainNavContext";
@@ -17,16 +16,26 @@ import { AntDesign } from "@expo/vector-icons";
 export default function FoodCard({ recipe }) {
   const [isFavorite, setIsFavorite] = useState(false);
   const favoriteValues = useContext(FavoriteContext);
-  const { favorite, setFavorite } = favoriteValues;
+  let favorite = undefined;
+  let setFavorite = undefined;
+  if (favoriteValues != undefined) {
+    favorite = favoriteValues.favorite;
+    setFavorite = favoriteValues.setFavorite;
+  }
   useEffect(() => {
-    if (favorite == recipe.id) {
-      setIsFavorite(true);
-    } else {
-      setIsFavorite(false);
+    try {
+      if (favorite == recipe.id) {
+        setIsFavorite(true);
+      } else {
+        setIsFavorite(false);
+      }
+    } catch {
+      setFavorite(0);
     }
   }, [favorite]);
-  async function checkFavorite() {
-      setFavorite(recipe.id)
+  function checkFavorite() {
+    console.log(recipe.id);
+    setFavorite(recipe.id);
   }
 
   const navigation = useContext(MainNavContext);
@@ -44,14 +53,15 @@ export default function FoodCard({ recipe }) {
         }}
         style={styles.imageContainer}
       >
-        <TouchableOpacity style={styles.favoriteIcon} onPress={checkFavorite}>
-          <AntDesign
-            name={isFavorite ? "star" : "staro"}
-            size={24}
-            color="white"
-          />
-        </TouchableOpacity>
-
+        {favorite && (
+          <TouchableOpacity style={styles.favoriteIcon} onPress={checkFavorite}>
+            <AntDesign
+              name={isFavorite ? "star" : "staro"}
+              size={24}
+              color="white"
+            />
+          </TouchableOpacity>
+        )}
         <View style={styles.textContainer}>
           <Text style={styles.textImage}>{recipe.name}</Text>
         </View>
