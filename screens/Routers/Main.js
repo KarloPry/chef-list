@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import disableBackButton from "../../util/disableBackButton";
@@ -13,10 +13,10 @@ import Lupa from "../../assets/svgs/Lupa";
 import CameraIcon from "../../assets/svgs/CameraIcon";
 import ProfileIcon from "../../assets/svgs/ProfileIcon";
 
-
+export const FavoriteContext = createContext();
 export default function Main({ navigation }) {
   const Tab = createBottomTabNavigator();
-  
+  const [favorite, setFavorite] = useState();
   disableBackButton();
   useEffect(() => {
     navigation.setOptions({
@@ -25,6 +25,7 @@ export default function Main({ navigation }) {
   }, []);
 
   return (
+    <FavoriteContext.Provider value={{ favorite, setFavorite }}>
       <Tab.Navigator screenOptions={{ tabBarStyle: styles.lowerbar }}>
         <Tab.Screen
           options={{
@@ -60,6 +61,7 @@ export default function Main({ navigation }) {
           }}
         />
       </Tab.Navigator>
+    </FavoriteContext.Provider>
   );
 }
 const styles = StyleSheet.create({

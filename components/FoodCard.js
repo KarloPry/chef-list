@@ -1,7 +1,14 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Text, StyleSheet, View, ImageBackground, TouchableOpacity } from "react-native";
+import {
+  Text,
+  StyleSheet,
+  View,
+  ImageBackground,
+  TouchableOpacity,
+} from "react-native";
 import CustomButton from "./CustomButton";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { FavoriteContext } from "../screens/Routers/Main";
 //Context
 import MainNavContext from "../context/MainNavContext";
 //Icons
@@ -9,40 +16,18 @@ import { AntDesign } from "@expo/vector-icons";
 
 export default function FoodCard({ recipe }) {
   const [isFavorite, setIsFavorite] = useState(false);
-
+  const favoriteValues = useContext(FavoriteContext);
+  const { favorite, setFavorite } = favoriteValues;
   useEffect(() => {
-    checkFavorite();
-  }, []);
-
-  async function checkFavorite () {
-    try{
-      const favorite = await AsyncStorage.getItem('favorite');
-      console.log('Favorito: ', favorite);
-      if(favorite) {
-        const favoriteParsed = JSON.parse(favorite);
-        if(favoriteParsed.favoriteId != recipe.id) {
-          setIsFavorite(false);
-        }
-      }
-    } catch(error) {
-      console.log('Error en obtener favorito');
-    }
-  }
-
-  async function storeFavorite () {
-    try{
-      const favorite = {
-        favoriteId: recipe.id 
-      }
-      await AsyncStorage.setItem('favorite', JSON.stringify(favorite));
-      console.log('Favorito: ', favorite);
+    if (favorite == recipe.id) {
       setIsFavorite(true);
-      } catch(error) {
-      console.log('Error en guardar favorito');
+    } else {
+      setIsFavorite(false);
     }
+  }, [favorite]);
+  async function checkFavorite() {
+      setFavorite(recipe.id)
   }
-
-  
 
   const navigation = useContext(MainNavContext);
   function handleViewRecipe() {
@@ -59,15 +44,17 @@ export default function FoodCard({ recipe }) {
         }}
         style={styles.imageContainer}
       >
-        <TouchableOpacity style={styles.favoriteIcon} onPress={isFavorite ? checkFavorite : storeFavorite}>
-          <AntDesign name={isFavorite?'star':'staro'} size={24} color="white" />
+        <TouchableOpacity style={styles.favoriteIcon} onPress={checkFavorite}>
+          <AntDesign
+            name={isFavorite ? "star" : "staro"}
+            size={24}
+            color="white"
+          />
         </TouchableOpacity>
-       
 
         <View style={styles.textContainer}>
           <Text style={styles.textImage}>{recipe.name}</Text>
         </View>
-
       </ImageBackground>
       <View style={styles.infoFood}>
         <Text style={{ fontSize: 10 }}>
