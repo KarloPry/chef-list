@@ -197,17 +197,11 @@ export default function Profile({ navigation }) {
             </TouchableOpacity>
           </View>
         )}
-        <View
-          style={{
-            backgroundColor: "red",
-            paddingHorizontal: 4,
-            paddingVertical: 4,
-          }}
-        >
+        <View style={styles.bottonLogout}>
           <TouchableOpacity onPress={()=>{
             navigation.navigate("Login")
           }}>
-            <Text style={{ color: "white", textAlign: "center" }}>
+            <Text style={{ color: "white", textAlign: "center", fontSize:20,}}>
               Cerrar Sesión
             </Text>
           </TouchableOpacity>
@@ -223,9 +217,9 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   profileImage: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
+    width: 150,
+    height: 150,
+    borderRadius: 80,
     borderWidth: 3,
     borderColor: "#537D3D",
   },
@@ -234,28 +228,32 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginTop: 20,
     marginBottom: 10,
+    marginLeft: 20,
     color: "#537D3D",
-    textAlign: "center",
+    // textAlign: "center",
   },
   inputs: {
     height: 40,
     width: 350,
     marginTop: 5,
-    textAlign: "center",
+    // textAlign: "center",
+    color: "#000",
     fontSize: 23,
     alignSelf: "center",
     marginBottom: 5,
+    fontSize: 20,
+    marginLeft: 30,
   },
   passwordContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
   },
   passwordInput: {
     height: 40,
     width: 240,
     textAlign: "center",
     fontSize: 20,
+    color: "#000",
     alignSelf: "center",
     marginBottom: 5,
   },
@@ -289,8 +287,18 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#FFFFFF",
-    fontSize: 17,
+    fontSize: 10,
     textAlign: "center",
     fontWeight: "bold",
+  },
+  bottonLogout: {
+    padding: 10,
+    flexDirection: "row",
+    borderRadius: 8,
+    backgroundColor: "#F28B0C",
+    marginHorizontal: 20,
+    marginBottom: 30,
+    marginTop: 20,
+    alignContent: "left",
   },
 });
