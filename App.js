@@ -5,6 +5,7 @@ import SignIn from './screens/Onboarding/SignIn';
 import Login from './screens/Onboarding/Login';
 import StackMain from './screens/Routers/StackMain';
 
+// This is a comment
 export default function App({navigation}) {
   const Stack = createNativeStackNavigator();
   return (
